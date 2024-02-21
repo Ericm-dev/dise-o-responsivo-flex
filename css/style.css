@@ -1,0 +1,224 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("../font/Montserrat-Regular.ttf");
+}
+
+@keyframes mostrar {
+    from {right: -200px;}
+    to {right: 0px;}
+}
+
+@keyframes ocultar {
+    from {right: 0px;}
+    to {right: -200px;}
+}
+
+.aparecer {
+    animation-name: mostrar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.desaparecer {
+    animation-name: ocultar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    font-family: Montserrat;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 44px;
+}
+
+nav a {
+    text-decoration: none;
+    color: gray;
+    padding-right: 30px;
+}
+
+.burguer {
+    margin-right: 10px;
+}
+
+.enlaces {
+    display: none;
+}
+
+.enlaces_mq {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background-color: gray;
+    top: 50px;
+    right: 0px;
+}
+
+.nav_mq {
+    color: white;
+    font-size: 1.4em;
+    padding: 8px 20px;
+}
+
+.presentacion {
+    background-image: url("../img/felicitacion_reyes_godos.png");
+    background-size: cover;
+    background-position: 100% 0;
+    height: 400px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.azul {
+    width: 90%;
+    margin: auto;
+    background-color: blue;
+    color: white;
+    font-size: 1.75em;
+    padding: 20px 10px;
+}
+
+.texto {
+    padding: 10px;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    color: white;
+}
+
+.contenido {
+    --rojo: #e52d27;
+    --gris: #212121;
+}
+
+.texto1 {
+    background-color: var(--rojo);
+}
+
+.texto2 {
+    background-color: var(--gris);
+}
+
+@media only screen and (min-width:320px) {
+    article {
+        display: flex;
+    }
+
+    .imagen {
+        width: 50%;
+    }
+
+    .texto {
+        flex: 1;
+    }
+
+    .texto2 {
+        order: 1;
+    }
+
+    .imagen1 {
+        background-color: var(--gris);
+    }
+
+    .imagen2 {
+        order: 2;
+        background-color: var(--rojo);
+    }
+}
+
+@media only screen and (min-width:500px) {
+    .imagen1 {
+        background-image: url('../img/mini1.png');
+    }
+
+    .imagen2 {
+        background-image: url('../img/mini2.png');
+        order: 1;
+    }
+
+    .imagen {
+        background-size: cover;
+        width: 35%;
+    }
+
+    .texto2 {
+        order: 2;
+    }
+
+    .texto {
+        flex: 1;
+    }
+}
+
+@media only screen and (min-width:570px) {
+    .burguer {
+        display: none;
+    }
+    
+    .enlaces {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width:678px) {
+    .contenido {
+        display: flex;
+    }
+
+    article {
+        flex-direction: column;
+        height: 245px;
+    }
+
+    .imagen {
+        height: 60%;
+        width: 100%;
+    }
+
+    .azul {
+        width: 240px;
+        padding: 25px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    .centrar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .presentacion {
+        width: 70%;
+        height: auto;
+    }
+
+    .contenido {
+        flex: 1;
+        flex-direction: column;
+    }
+
+    article {
+        height: 275px;
+    }
+
+    .imagen {
+        height: 200px;
+    }
+
+    .texto {
+        height: auto;
+    }
+}
